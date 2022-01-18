@@ -2,6 +2,7 @@
   "name": "tiktokclone",
   "version": "0.0.0",
   "scripts": {
+    "co":"sui-mono commit",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -11,6 +12,7 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@s-ui/mono": "2.18.0",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
     "@vitejs/plugin-react": "1.1.4",
@@ -19,6 +21,8 @@
     "vite": "2.7.12"
   },
   "-eslintConfig": {
-    "extends": ["./node_modules/standard/eslintrc.json"]
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
   }
 }
