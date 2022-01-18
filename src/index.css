@@ -1,0 +1,18 @@
+@font-face{
+  font-family: "Proxima Nova";
+  src: url('assets/Proxima-Nova-Regular.ttf');
+  font-weight: 400;
+}
+@font-face{
+  font-family: "Proxima Nova";
+  src: url('assets/Proxima-Nova-Semibold.ttf');
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  font-family: "Proxima Nova",Arial, Tahoma, PingFangSC, sans-serif, "Segoe UI Emoji", "Noto Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
