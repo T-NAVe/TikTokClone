@@ -3,19 +3,36 @@
     height: 100%;
 }
 
+.wrapper {
+    position: relative;
+}
+
 .player {
     width: 65px;
     height: 62px;
     background-color: transparent;
-    border: 0;
     background-image: url(assets/player.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    border: 0;
     position: absolute;
     inset: 0;
     margin: auto;
 }
 .hidden {
     opacity: 0;
+}
+.actions{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.action{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,10 +1,9 @@
 import styles from './styles.module.css'
 import clsx from 'clsx'
 import {useRef, useState} from 'react'
+import VideoPlayerActions from './VideoPlayerActions'
 
-const SRC = 'https://v16-webapp.tiktok.com/613d1498ff0f47f2c84d3e022ebeefa9/61e6edf3/video/tos/useast2a/tos-useast2a-ve-0068c002/dd3566a2972f4a968f06f639dbab3fc3/?a=1988&br=640&bt=320&cd=0%7C0%7C1&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=Yu12_FIrkag3-I&l=20220118104012010223081157100816E4&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anQ0eDU6Zjx5OTMzNzczM0ApZTM5OTUzOjw1Nzc0MzQzM2doYTVfcjRfaTJgLS1kMTZzc2MwMjFiYmIvMWIzLy0yL2I6Yw%3D%3D&vl=&vr='
-
-export default function VideoPlayer () {
+export default function VideoPlayer ({src}) {
     const [playing, setPlaying] = useState(false)
     const video = useRef(null)
     const handlePlay = () =>{
@@ -21,16 +20,18 @@ export default function VideoPlayer () {
     })
 
     return (
-      <div>
+      <div className={styles.wrapper}>
         <video
-            ref={video}
             className={styles.video}
-            src={SRC}
             controls={false}
+            loop
             onClick={handlePlay}
+            ref={video}
+            src={src}
         />
         <i className={playerClassName} onClick={handlePlay}>
         </i>
+        <VideoPlayerActions/>
       </div>
   )
 }
