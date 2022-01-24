@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {useRef, useState} from 'react'
 import VideoPlayerActions from './VideoPlayerActions'
 
-export default function VideoPlayer ({src}) {
+export default function VideoPlayer ({src, ...props}) {
     const [playing, setPlaying] = useState(false)
     const video = useRef(null)
     const handlePlay = () =>{
@@ -31,7 +31,7 @@ export default function VideoPlayer ({src}) {
         />
         <i className={playerClassName} onClick={handlePlay}>
         </i>
-        <VideoPlayerActions/>
+        <VideoPlayerActions {...props}/>
       </div>
   )
 }
