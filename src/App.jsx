@@ -1,11 +1,11 @@
 import './App.css'
 import VideoFeed from './components/VideoFeed'
 
-function App () {
+function App() {
   return (
     <div className='App'>
       <main>
-        <VideoFeed/>
+        <VideoFeed />
       </main>
     </div>
   )
