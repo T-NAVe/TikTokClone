@@ -26,13 +26,19 @@
 .actions{
     position: absolute;
     bottom: 120px;
-    right: 16px;
+    right: 8px;
+    z-index: 1;
 }
 
 .action{
     color: #fff;
+    background: transparent;
+    border: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 15px;
+    text-align: center;
     align-items: center;
+    width: 55px;
 }
