@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import VideoPlayerActions from './VideoPlayerActions'
 import VideoDescription from '../VideoDescription/index'
 
-export default function VideoPlayer ({ src, likes, comments, shares, albumCover, author, description, ...props }) {
+export default function VideoPlayer ({ src, likes, comments, shares, albumCover, author, description, songTitle, ...props }) {
   const [playing, setPlaying] = useState(false)
   const video = useRef(null)
   const handlePlay = () => {
@@ -32,7 +32,7 @@ export default function VideoPlayer ({ src, likes, comments, shares, albumCover,
       />
       <i className={playerClassName} onClick={handlePlay} />
       <VideoPlayerActions likes={likes} comments={comments} shares={shares} />
-      <VideoDescription albumCover={albumCover} author={author} description={description} />
+      <VideoDescription albumCover={albumCover} author={author} description={description} songTitle={songTitle} />
     </div>
   )
 }
