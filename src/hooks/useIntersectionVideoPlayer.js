@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
-
-// if root is null, window viewport will be used
+// if root is null viewport will be used as reference
 const options = {
   root: document.querySelector('main'),
   rootMargin: '0px',
-  threshold: 0.8
+  threshold: 0.9
 }
 
 const observer = new window.IntersectionObserver((entries) => {
@@ -24,8 +23,12 @@ export default function useIntersectionVideoPlayer ({ video }) {
     observer.observe(video.current)
     video.current._handleIntersect = (isIntersecting) => {
       const { current: videoEl } = video
-      isIntersecting ? videoEl.play() : videoEl.pause()
-      setPlaying(isIntersecting)
+
+      isIntersecting
+        ? videoEl.play()
+        : videoEl.pause()
+
+      setPlaying(!videoEl.paused)
     }
   }, [video.current])
 
@@ -35,8 +38,11 @@ export default function useIntersectionVideoPlayer ({ video }) {
       ? videoEl.pause()
       : videoEl.play()
 
-    setPlaying(!videoEl.paused)
+    setPlaying(!playing)
   }
 
-  return { playing, handlePlay }
+  return {
+    handlePlay,
+    playing
+  }
 }
